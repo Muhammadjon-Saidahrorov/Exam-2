@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/enterScreen3">
+
+    <fragment
+        android:id="@+id/enterScreen3"
+        tools:layout="@layout/screen_enter"
+        android:name="uz.gita.examfinal2.presentation.ui.enterscreen.enter.EnterScreen"
+        android:label="EnterScreen">
+        <action
+            android:id="@+id/action_enterScreen3_to_enterViewScreen2"
+            app:destination="@id/enterViewScreen2" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_enter_view"
+        android:id="@+id/enterViewScreen2"
+        android:name="uz.gita.examfinal2.presentation.ui.enterscreen.enter.EnterViewScreen"
+        android:label="EnterViewScreen" >
+        <action
+            android:id="@+id/action_enterViewScreen2_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        tools:layout="@layout/screen_login"
+        android:name="uz.gita.examfinal2.presentation.ui.loginscreen.login.LoginScreen"
+        android:label="LoginScreen" >
+        <action
+            android:id="@+id/action_loginScreen_to_signInScreen2"
+            app:destination="@id/signInScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_signUpScreen3"
+            app:destination="@id/signUpScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpScreen"
+        tools:layout="@layout/screen_sign_up"
+        android:name="uz.gita.examfinal2.presentation.ui.loginscreen.signup.SignUpScreen"
+        android:label="SignUpScreen" >
+        <action
+            android:id="@+id/action_signUpScreen_to_signInScreen3"
+            app:destination="@id/signInScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_signUpScreen_to_profileScreen2"
+            app:destination="@id/profileScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInScreen"
+        tools:layout="@layout/screen_sign_in"
+        android:name="uz.gita.examfinal2.presentation.ui.loginscreen.signin.SignInScreen"
+        android:label="SignInScreen" >
+        <action
+            android:id="@+id/action_signInScreen_to_signUpScreen2"
+            app:destination="@id/signUpScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_signInScreen_to_homeScreen2"
+            app:destination="@id/homeScreen2"
+            app:popUpTo="@id/enterScreen3"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signInScreen_to_forgotScreen"
+            app:destination="@id/forgotScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileScreen2"
+        tools:layout="@layout/screen_create_profile"
+        android:name="uz.gita.examfinal2.presentation.ui.createprofilscreen.createprofile.CreateProfileScreen"
+        android:label="ProfileScreen" >
+        <action
+            android:id="@+id/action_profileScreen2_to_profilePinScreen"
+            app:destination="@id/profilePinScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilePinScreen"
+        tools:layout="@layout/screen_create_profile_pin"
+        android:name="uz.gita.examfinal2.presentation.ui.createprofilscreen.createprofilepin.CreateProfilePinScreen"
+        android:label="ProfilePinScreen" >
+        <action
+            android:id="@+id/action_profilePinScreen_to_homeScreen2"
+            app:destination="@id/homeScreen2"
+            app:popUpTo="@id/enterScreen3"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen2"
+        tools:layout="@layout/screen_home"
+        android:name="uz.gita.examfinal2.presentation.ui.homescreen.home.HomeScreen"
+        android:label="HomeScreen" />
+    <fragment
+        android:id="@+id/forgotScreen"
+        tools:layout="@layout/screen_forgot"
+        android:name="uz.gita.examfinal2.presentation.ui.forgotscreen.forgot.ForgotScreen"
+        android:label="ForgotScreen" >
+        <action
+            android:id="@+id/action_forgotScreen_to_forgotVerify"
+            app:destination="@id/forgotVerify" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotVerify"
+        tools:layout="@layout/screen_forgot_code_verification"
+        android:name="uz.gita.examfinal2.presentation.ui.forgotscreen.forgotverify.ForgotVerify"
+        android:label="ForgotVerify" >
+        <action
+            android:id="@+id/action_forgotVerify_to_forgotNewPasswordScreen"
+            app:destination="@id/forgotNewPasswordScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotNewPasswordScreen"
+        tools:layout="@layout/screen_forgot_new_password"
+        android:name="uz.gita.examfinal2.presentation.ui.forgotscreen.forgotnewpassword.ForgotNewPasswordScreen"
+        android:label="ForgotNewPasswordScreen" >
+        <action
+            android:id="@+id/action_forgotNewPasswordScreen_to_homeScreen2"
+            app:destination="@id/homeScreen2"
+            app:popUpTo="@id/enterScreen3"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="uz.gita.examfinal2.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+</navigation>
